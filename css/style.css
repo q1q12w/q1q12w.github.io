@@ -1,0 +1,344 @@
+.header {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 20px 0px 0px 0px;
+	box-shadow: 0px 0.2px 0px 0;
+}
+
+.header a {
+	text-decoration: none;
+	color: #000;
+	padding: 15px;
+}
+
+.navbar {
+	align-items: baseline
+}
+
+
+.navbar li {
+	display: inline-block;
+	padding: 5px;
+}
+.navbar li a:hover{
+	color: #6c757d;
+}
+
+.btn a {
+	background-color: #8c7ea3; 
+	border-radius: 100px;
+}
+.btn a:hover {
+	background-color: #aaa2ba;
+}
+
+/*ТЕЛО ГЛАВНОЙ СТРАНИЦЫ*/
+
+/*БЛОК ИНФОРМАЦИИ*/
+.cont_ads a {
+	text-decoration: none;
+}
+.cont_ads {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+}
+
+.cont_ads__info {
+	padding: 0px 100px;
+}
+
+.cont_ad__img img {
+	height: 500px;
+	transition: all 1s ease-in-out;
+}
+.cont_ad__img img:hover {
+	height: 490px;
+}
+
+.cont_ads__info p {
+	padding: 50px 0;
+}
+
+.cont_ads__info a {
+	padding: 20px 35px;
+	font-size: 25px;
+	color: #000;
+	background-color: #8c7ea3; 
+	border-radius: 100px;
+}
+.cont_ads__info a:hover {
+	background-color: #aaa2ba;
+}
+
+/*БЛОК О ПРОЕКТЕ*/
+
+.faq_h2 h2 {
+	text-align: center;
+	padding: 50px;
+}
+
+.faq_cont img {
+	height: 70px;
+}
+
+.info_img {
+	padding: 50px;
+}
+
+.info_text h4 {
+	color: #dc3545;
+}
+
+.faq_cont {
+	display: flex;
+	flex-direction: column;
+}
+
+.faq_cont__strong1 {
+	display: flex;
+	justify-content: center;
+}
+
+.faq_cont__strong2 {
+	display: flex;
+	justify-content: center;
+}
+
+.strong_block {
+	display: flex;
+	align-items: center;
+}
+
+.info_btn {
+	text-align: center;
+	padding: 50px 0;
+}
+
+.info_btn a {
+	text-decoration: none;
+	padding: 25px;
+	margin: 25px;
+	font-size: 20px;
+	border-radius: 100px;
+	background-color: #dc3545;
+	color: #fff;
+}
+.info_btn a:hover {
+	background-color: #d38f96;
+}
+
+/*БЛОК ПРО ВИРУСЫ*/
+
+.virus_cont_h2 {
+	text-align: center;
+	padding: 50px;
+}
+
+.virus__definition {
+	padding: 0 100px;
+	font-size: 25px;
+}
+
+.virus_type__info {
+	text-align: center;
+	font-size: 25px;
+}
+
+.virus_type {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.num {
+	color: #dc3545;
+	padding: 10px;
+}
+
+
+.num span {
+	color: #000;
+}
+
+.virus_type {
+	font-size: 30px;
+}
+.virus_type span {
+	font-size: 25px;
+}
+
+.virus_btn {
+	text-align: center;
+	margin: 50px;
+}
+
+.virus_btn a {
+	text-decoration: none;
+	padding: 25px;
+	font-size: 20px;
+	border-radius: 100px;
+	background-color: #dc3545;
+	color: #fff;
+}
+.virus_btn a:hover {
+	background-color: #d38f96;
+}
+
+/*БЛОК ПРО АНТИВИРУСЫ*/
+.antivirus_info {
+	text-align: center;
+	padding: 50px;
+}
+
+.antivirus_content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	margin: 0px 40px;
+}
+.antivirus_string1 {
+	display: flex;
+	align-items: center;
+	border-radius: 100px;
+	background-color: #2514;
+	transition: all 1s ease-in-out;
+}
+.antivirus_string1:hover {
+	border-radius: 200px;
+}
+.antivirus_string2 {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	border-radius: 100px;
+	background-color: #8a8d8944;
+	transition: all 1s ease-in-out;
+}
+.antivirus_string2:hover {
+	border-radius: 200px;
+}
+.antivirus_string3 {
+	display: flex;
+	align-items: center;
+	border-radius: 100px;
+	background-color: #2514;
+	transition: all 1s ease-in-out;
+}
+.antivirus_string3:hover {
+	border-radius: 200px;
+}
+.antivirus_content img {
+	height: 400px;
+}
+.av_text p {
+	font-size: 25px;
+	text-align: center;
+}
+
+/*ИНФА О НАШЕМ АНТИВИРУСЕ*/
+
+.av__information {
+	text-align: center;
+	padding: 50px;
+	background-color: #323;
+	border-radius: 50px 50px 0 0;
+}
+
+.av_inf__text {
+	font-size: 25px;
+	color: #fff;
+}
+
+.av_inf__btn {
+	padding: 20px;
+}
+
+.av_inf__btn a {
+	text-decoration: none;
+	font-size: 25px;
+	color: #fff;
+	background-color: #ba6c6c;
+	padding: 20px;
+	border-radius: 100px;
+	transition: all 1s ease-in-out;
+}
+.av_inf__btn a:hover {
+	background-color: #d8a2a2;
+}
+
+/*ПОДВАЛ САЙТА*/
+
+.footer_cont {
+	display: flex;
+	align-items: center;
+	background-color: #200;
+}
+.footer__logo a{
+	margin-left: 25px;
+	text-decoration: none;
+	color: #fff;
+}
+.footer__text {
+	margin-left: 20px;
+	font-size: 10px;
+	color: #c2c2c2;
+}
+
+/*ТЕЛО САЙТА ПРО АНТИВИРУСЫ*/
+
+.info {
+	padding: 50px;
+	text-align: center;
+}
+.name-type {
+	padding: 0 50px;
+}
+
+.type {
+	display: flex;
+	flex-direction: column;
+}
+
+.name__cont {
+	display: flex;
+}
+
+.name__string1 {
+	display: flex;
+}
+.name__string1___block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #827889;
+	height: 350px;
+	width: 250px;
+}
+
+.name_img img{
+	width: 100px;
+}
+
+.name_desc {
+	text-align: center;
+}
+
+.name_btn {
+	margin: 50px 0px 0px 0px;
+}
+
+.name_btn a {
+	text-decoration: none;
+	padding: 15px;
+	color: #000;
+	background-color: #b0d2f3;
+	border-radius: 20px;
+}
+.name_btn a:hover {
+	background-color: #e0e9f2;
+}
