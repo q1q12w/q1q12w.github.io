@@ -121,6 +121,15 @@ footer {
     }
 }
 
+.model_cont {
+    display: flex;
+    justify-content: center;
+}
+
+.model_cont label{
+    margin: 0px 15px;
+}
+
 body.dark-theme {
     background-color: var(--background-color-dark);
     color: var(--text-color-dark);
