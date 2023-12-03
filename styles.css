@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+}
+
+.header_logo {
+    padding: 20px 0px 0px 0px;
+    font-size: 50px;
+}
+
+#chat-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#chat-messages {
+    height: 500px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    width: calc(90% - 18px);
+    padding: 8px;
+    box-sizing: border-box;
+    margin-right: 8px;
+}
+
+#send-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#send-btn:hover {
+    background-color: #8fab90;
+}
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+#chat-container.dark-theme {
+    border-color: #666;
+    background-color: #444;
+}
+
+#chat-messages.dark-theme {
+    border-color: #555;
+}
+
+#user-input.dark-theme {
+    background-color: #555;
+    color: #fff;
+}
+
+#send-btn.dark-theme {
+    background-color: #777;
+    color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
