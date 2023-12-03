@@ -3,34 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VoronSoft AI</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>VoronSoft AI - Вход</title>
+        <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 150px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8fab90;
+}
+
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="header_logo">VoronSoft</div>
-    <p>Умный помощик</p>
-    <button onclick="toggleTheme()">Переключить тему</button>
-</header>
-
-<div id="chat-container">
-    <div id="chat-messages"></div>
-    <input type="text" id="user-input" placeholder="Введите сообщение...">
-    <button id="send-btn" onclick="sendMessage()">Отправить</button>
+<div class="login-container">
+    <h2>Вход на страницу чата</h2>
+    <form id="login-form">
+        <label for="username">Введите логин:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Войти</button>
+    </form>
 </div>
 
-<div class="model_cont">
-    <label for="gpt-model">Выберите модель GPT:</label>
-    <select id="gpt-model" name="gpt-model">
-      <option value="gpt-3">GPT-3</option>
-      <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
-    </select>
-</div>
 
-<footer>
-    <p>Продукт VoronSoft. Все права защищены.</p>
-</footer>
+
+
 
 <script src="script.js"></script>
 

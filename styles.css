@@ -13,6 +13,26 @@ body {
     padding: 0;
     background-color: var(--background-color-light);
     color: var(--text-color-light);
+    transition: background-color 0.3s ease;
+}
+
+#greeting-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#greeting-container p {
+    font-weight: bold;
+}
+
+#chat-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 header {
@@ -62,15 +82,35 @@ header {
     background-color: #8fab90;
 }
 
+.theme-toggle-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #45a049;
+}
+
+
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
 }
+
+footer:hover {
+    background-color: #555; /* Цвет фона при наведении */
+}
+
 
 /* Медиа-запросы для адаптивности */
 @media only screen and (max-width: 768px) {
@@ -123,12 +163,41 @@ footer {
 
 .model_cont {
     display: flex;
+    align-items: center;
     justify-content: center;
+    margin: 20px 0;
 }
 
-.model_cont label{
-    margin: 0px 15px;
+.model_cont label {
+    margin-right: 10px;
+    font-weight: bold;
 }
+
+.model_cont select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease; /* Плавный переход цвета рамки */
+}
+
+.model_cont select:hover {
+    border-color: #666; /* Цвет рамки при наведении */
+}
+
+.model_cont select:focus {
+    outline: none;
+    border-color: #4CAF50; /* Цвет рамки при фокусировке */
+}
+
+/* Опционально: добавьте стили для изменения внешнего вида выбранных опций */
+.model_cont select option {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+
 
 body.dark-theme {
     background-color: var(--background-color-dark);
@@ -146,3 +215,62 @@ body.dark-theme #chat-container {
     background-color: #333; /* Темный фон для контейнера чата */
     color: #f9f9f9; /* Темный текст */
 }
+
+/* Анимации */
+
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.light-theme {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+body.dark-theme {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#chat-messages div {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* градиенты и тени */
+
+:root {
+    --background-gradient-light: #f9f9f9; /* Светлый фон */
+    --background-gradient-dark: #333; /* Темный фон */
+}
+
+body {
+    background: var(--background-gradient-light);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: background 0.5s ease; /* Плавный переход фона */
+}
+
+#chat-container {
+    background: var(--background-gradient-light);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Темная тема */
+body.dark-theme {
+    background: var(--background-gradient-dark);
+}
+
+#chat-container.dark-theme {
+    background: var(--background-gradient-dark);
+}
+

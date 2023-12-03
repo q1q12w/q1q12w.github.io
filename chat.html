@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoronSoft AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="header_logo">VoronSoft</div>
+    <p>Умный помощик</p>
+    <button onclick="toggleTheme()" class="theme-toggle-btn">Переключить тему</button>
+</header>
+
+<div id="greeting-container"></div>
+
+<div id="chat-container">
+    <div id="chat-messages"></div>
+    <input type="text" id="user-input" placeholder="Введите сообщение...">
+    <button id="send-btn" onclick="sendMessage()">Отправить</button>
+</div>
+
+<div class="model_cont">
+    <label for="gpt-model">Выберите модель GPT:</label>
+    <select id="gpt-model" name="gpt-model">
+      <option value="gpt-3">GPT-3</option>
+      <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+    </select>
+</div>
+
+<footer>
+    <p>Продукт VoronSoft. Все права защищены.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

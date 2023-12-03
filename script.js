@@ -1,12 +1,38 @@
 const OPENAI_API_KEY = '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'; // Замените на свой API-ключ OpenAI
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    var loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            if (username) {
+                localStorage.setItem("username", username);
+                window.location.href = 'chat.html'; // Перенаправление на основную страницу после входа
+            } else {
+                alert('Введите логин!');
+            }
+        });
+    }
+});
 // Функция toggleTheme теперь определена в глобальной области видимости
+
 function toggleTheme() {
     var body = document.body;
     body.classList.toggle("dark-theme");
     var theme = body.classList.contains("dark-theme") ? "dark" : "light";
-    localStorage.setItem("theme", theme); // Сохраняем выбранную тему в localStorage
+    localStorage.setItem("theme", theme);
+
+    // Добавляем класс анимации при смене темы
+    body.classList.add("theme-transition");
+
+    // Убираем класс анимации после завершения перехода
+    setTimeout(function() {
+        body.classList.remove("theme-transition");
+    }, 500);
 }
+
 
 // При загрузке страницы проверяем сохраненную тему и применяем ее
 document.addEventListener("DOMContentLoaded", function() {
@@ -16,15 +42,22 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         document.body.classList.remove("dark-theme");
     }
+
+     var username = localStorage.getItem("username") || "Гость";
+
+    // Выводим приветствие и логин пользователя
+    var greetingContainer = document.getElementById('greeting-container');
+    greetingContainer.innerHTML = '<p>Здравствуй, ' + username + '!</p>';
 });
 
 // Функция sendMessage остается в глобальной области видимости
 function sendMessage() {
     var userInput = document.getElementById('user-input').value;
     var chatMessages = document.getElementById('chat-messages');
+    var username = localStorage.getItem("username") || "Гость";
 
     // Выводим сообщение пользователя
-    chatMessages.innerHTML += '<div><strong>Вы:</strong> ' + userInput + '</div>';
+    chatMessages.innerHTML += '<div><strong>' + username + ':</strong> ' + userInput + '</div>';
 
     // Отправляем запрос к API OpenAI
     fetch('https://api.openai.com/v1/chat/completions', {
@@ -56,3 +89,22 @@ function sendMessage() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     });
 }
+
+document.getElementById('user-input').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+});
+// Функция для обработки эффекта скролла
+function handleScroll() {
+    var scrollPosition = window.scrollY;
+
+    // Изменение прозрачности фона при прокрутке
+    var transparency = Math.min(scrollPosition / 500, 1); // Вы можете настроить значение 500 под свои потребности
+
+    document.body.style.backgroundColor = `rgba(249, 249, 249, ${1 - transparency})`;
+}
+
+// Добавление слушателя событий для скролла
+window.addEventListener('scroll', handleScroll);
+
