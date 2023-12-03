@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = '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'; // Замените на свой API-ключ OpenAI
+const OPENAI_API_KEY = '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'; // Замените на свой API-ключ OpenAI
 
 function sendMessage() {
     var userInput = document.getElementById('user-input').value;
