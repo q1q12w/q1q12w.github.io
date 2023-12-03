@@ -1,7 +1,18 @@
+:root {
+    --background-color-light: #f9f9f9; /* Светлый фон */
+    --text-color-light: #333; /* Светлый текст */
+    --background-color-dark: #333; /* Темный фон */
+    --text-color-dark: #f9f9f9; /* Темный текст */
+    /* ... другие переменные для светлой и темной темы ... */
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
 }
 
 header {
@@ -51,31 +62,6 @@ header {
     background-color: #8fab90;
 }
 
-/* Темная тема */
-body.dark-theme {
-    background-color: #333;
-    color: #fff;
-}
-
-#chat-container.dark-theme {
-    border-color: #666;
-    background-color: #444;
-}
-
-#chat-messages.dark-theme {
-    border-color: #555;
-}
-
-#user-input.dark-theme {
-    background-color: #555;
-    color: #fff;
-}
-
-#send-btn.dark-theme {
-    background-color: #777;
-    color: #fff;
-}
-
 footer {
     background-color: #333;
     color: #fff;
@@ -84,4 +70,70 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Медиа-запросы для адаптивности */
+@media only screen and (max-width: 768px) {
+    .header_logo {
+        font-size: 30px; /* Уменьшаем размер логотипа */
+    }
+
+    #chat-container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    #chat-messages {
+        height: 300px; /* Уменьшаем высоту контейнера сообщений */
+    }
+
+    #user-input {
+        width: calc(100% - 20px); /* Растягиваем поле ввода на всю ширину */
+    }
+
+    footer {
+        padding: 5px; /* Уменьшаем отступы в футере */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .header_logo {
+        font-size: 24px; /* Еще больше уменьшаем размер логотипа */
+    }
+
+    #chat-container {
+        margin: 5px;
+        padding: 5px;
+    }
+
+    #chat-messages {
+        height: 260px; /* Еще больше уменьшаем высоту контейнера сообщений */
+    }
+
+    #user-input,
+    #send-btn {
+        width: 100%; /* Растягиваем поле ввода и кнопку на всю ширину */
+        margin: 4px 0; /* Добавляем небольшой отступ сверху и снизу */
+    }
+
+    footer {
+        padding: 3px; /* Еще больше уменьшаем отступы в футере */
+    }
+}
+
+body.dark-theme {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+/* Светлая тема */
+body.light-theme #chat-container {
+    background-color: #f9f9f9; /* Светлый фон для контейнера чата */
+    color: #333; /* Светлый текст */
+}
+
+/* Темная тема */
+body.dark-theme #chat-container {
+    background-color: #333; /* Темный фон для контейнера чата */
+    color: #f9f9f9; /* Темный текст */
 }

@@ -1,5 +1,24 @@
-const OPENAI_API_KEY = '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'; // Замените на свой API-ключ OpenAI
+const OPENAI_API_KEY = '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'; // Замените на свой API-ключ OpenAI
 
+// Функция toggleTheme теперь определена в глобальной области видимости
+function toggleTheme() {
+    var body = document.body;
+    body.classList.toggle("dark-theme");
+    var theme = body.classList.contains("dark-theme") ? "dark" : "light";
+    localStorage.setItem("theme", theme); // Сохраняем выбранную тему в localStorage
+}
+
+// При загрузке страницы проверяем сохраненную тему и применяем ее
+document.addEventListener("DOMContentLoaded", function() {
+    var savedTheme = localStorage.getItem("theme") || "light";
+    if(savedTheme === "dark") {
+        document.body.classList.add("dark-theme");
+    } else {
+        document.body.classList.remove("dark-theme");
+    }
+});
+
+// Функция sendMessage остается в глобальной области видимости
 function sendMessage() {
     var userInput = document.getElementById('user-input').value;
     var chatMessages = document.getElementById('chat-messages');
@@ -12,12 +31,11 @@ function sendMessage() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // Правильный формат заголовка Authorization
             'Authorization': 'Bearer ' + OPENAI_API_KEY,
         },
         body: JSON.stringify({
-            model: 'gpt-3.5-turbo', // Укажите модель, которую вы хотите использовать
-            messages: [{role: 'user', content: userInput}], // Сообщения должны быть в формате массива объектов
+            model: 'gpt-3.5-turbo',
+            messages: [{role: 'user', content: userInput}],
             max_tokens: 4000,
         }),
     })
@@ -28,17 +46,13 @@ function sendMessage() {
         return response.json();
     })
     .then(data => {
-        // Получаем ответ от OpenAI и выводим его
         var botResponse = data.choices[0].message.content.trim();
         chatMessages.innerHTML += '<div><strong>VoronSoft:</strong> ' + botResponse + '</div>';
-        // Прокручиваем вниз, чтобы видеть последние сообщения
         chatMessages.scrollTop = chatMessages.scrollHeight;
     })
     .catch(error => {
         console.error('Ошибка:', error.message);
-        // Выводим сообщение об ошибке с подробной информацией
         chatMessages.innerHTML += '<div><strong>Ошибка:</strong> Не удалось получить ответ от OpenAI. ' + error.message + '</div>';
-        // Прокручиваем вниз, чтобы видеть последние сообщения
         chatMessages.scrollTop = chatMessages.scrollHeight;
     });
 }
