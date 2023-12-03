@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = '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'; // Замените на свой API-ключ OpenAI
+const OPENAI_API_KEY = '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'; // Замените на свой API-ключ OpenAI
 
 
 document.addEventListener("DOMContentLoaded", function() {
